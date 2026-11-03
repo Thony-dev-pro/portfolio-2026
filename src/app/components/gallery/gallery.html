@@ -1,0 +1,34 @@
+@if (images().length === 0) {
+  <div class="placeholder mono muted">[Capture d'écran à ajouter]</div>
+} @else {
+  <div class="gallery-grid">
+    @for (img of images(); track img.src; let i = $index) {
+      <figure class="gallery-item">
+        <button class="gallery-btn" (click)="open(i)" [attr.aria-label]="'Agrandir : ' + img.alt">
+          <img [ngSrc]="img.src" [alt]="img.alt" width="600" height="400" />
+        </button>
+        @if (img.caption) {
+          <figcaption class="mono muted">{{ img.caption }}</figcaption>
+        }
+      </figure>
+    }
+  </div>
+}
+
+@if (activeIndex() !== null) {
+  <div class="lightbox-overlay" role="dialog" aria-modal="true" [attr.aria-label]="images()[activeIndex()!].alt" (click)="onOverlayClick($event)">
+    <div class="lightbox-content">
+      <button class="lightbox-close mono" (click)="close()" aria-label="Fermer">✕</button>
+      <img [src]="images()[activeIndex()!].src" [alt]="images()[activeIndex()!].alt" class="lightbox-img" />
+      @if (images()[activeIndex()!].caption) {
+        <p class="lightbox-caption mono muted">{{ images()[activeIndex()!].caption }}</p>
+      }
+      @if (images().length > 1) {
+        <div class="lightbox-nav">
+          <button class="mono accent" (click)="prev()" aria-label="Précédent">← Précédent</button>
+          <button class="mono accent" (click)="next()" aria-label="Suivant">Suivant →</button>
+        </div>
+      }
+    </div>
+  </div>
+}

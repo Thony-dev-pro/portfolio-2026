@@ -1,0 +1,61 @@
+@if (project() === null) {
+  <app-not-found />
+} @else {
+  <div class="detail container">
+    <a routerLink="/" fragment="projets" class="back-link mono accent">← Retour aux projets</a>
+
+    <p class="detail-label mono accent">{{ project()!.year }} · {{ project()!.type }}</p>
+    <h1 class="detail-title">{{ project()!.title }}</h1>
+    <p class="detail-lead">{{ project()!.shortDescription }}</p>
+
+    <div class="detail-info">
+      <div>
+        <p class="info-heading mono muted">Technologies</p>
+        <div class="tags">
+          @for (t of project()!.tech; track t) {
+            <app-tag [label]="t" />
+          }
+        </div>
+      </div>
+      <div>
+        <p class="info-heading mono muted">Liens</p>
+        @if (project()!.githubUrl) {
+          <a [href]="project()!.githubUrl" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Voir le code sur GitHub</a>
+        } @else {
+          <p class="mono muted">Code source privé</p>
+        }
+        @if (project()!.demoUrl) {
+          <a [href]="project()!.demoUrl" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:12px">Démo</a>
+        }
+      </div>
+    </div>
+
+    <div class="detail-description">
+      <p class="info-heading mono muted">Description</p>
+      @for (para of project()!.description; track $index) {
+        <p>{{ para }}</p>
+      }
+      @if (project()!.features?.length) {
+        <ul>
+          @for (feat of project()!.features!; track $index) {
+            <li>{{ feat }}</li>
+          }
+        </ul>
+      }
+    </div>
+
+    <div class="detail-gallery">
+      <p class="info-heading mono muted">Captures d'écran</p>
+      <app-gallery [images]="project()!.images" />
+    </div>
+
+    <nav class="detail-nav mono">
+      @if (prevProject()) {
+        <a [routerLink]="['/projets', prevProject()!.slug]" class="accent">← {{ prevProject()!.title }}</a>
+      }
+      @if (nextProject()) {
+        <a [routerLink]="['/projets', nextProject()!.slug]" class="accent">{{ nextProject()!.title }} →</a>
+      }
+    </nav>
+  </div>
+}

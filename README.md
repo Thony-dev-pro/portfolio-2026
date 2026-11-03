@@ -1,59 +1,54 @@
-# Portfolio
+# Portfolio — Thony Rasolofondraibe
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.4.
+Angular 22 · Standalone components · SCSS · No UI library.
 
-## Development server
-
-To start a local development server, run:
+## Install & run
 
 ```bash
-ng serve
+npm install
+npm start          # http://localhost:4200
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Build
 
 ```bash
-ng generate component component-name
+npm run build      # output → dist/portfolio/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Deploy
 
+### GitHub Pages
 ```bash
-ng generate --help
+npm run build -- --base-href /your-repo-name/
+# Copy dist/portfolio/browser/ to the gh-pages branch.
+# Add a 404.html that is a copy of index.html so Angular routing works on hard refresh.
 ```
 
-## Building
+### Vercel
+Import the repo. Set:
+- Build command: `npm run build`
+- Output directory: `dist/portfolio/browser`
+- Add a rewrite rule: `/* → /index.html` (status 200) in `vercel.json`:
 
-To build the project run:
-
-```bash
-ng build
+```json
+{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Add a new project
 
-## Running unit tests
+1. Add an object to `src/app/data/projects.ts` following the `Project` interface.
+2. Drop screenshots in `src/assets/projects/<slug>/`.
+3. Reference them in the `images` array of the project object.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+That's it — the home page and routing update automatically.
 
-```bash
-ng test
-```
+## Placeholders to fill in
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Placeholder | File | What to put |
+|---|---|---|
+| `[GITHUB_URL_RAG]` | `src/app/data/projects.ts` | GitHub URL for "Système RAG local" |
+| `[IMAGES_RAG]` | `src/app/data/projects.ts` + `src/assets/projects/rag-local/` | 2–4 screenshots |
+| `[IMAGES_PAIEMENT]` | `src/app/data/projects.ts` + `src/assets/projects/paiement-mobile-money/` | Schemas / diagrams |
+| `[IMAGES_ECOMMERCE]` | `src/app/data/projects.ts` + `src/assets/projects/modules-ecommerce/` | Screenshots |
+| GitHub URL (footer) | `src/app/components/footer/footer.ts` → `GITHUB_URL` | Your GitHub profile URL |
+| LinkedIn URL (footer) | `src/app/components/footer/footer.ts` → `LINKEDIN_URL` | Your LinkedIn profile URL |

@@ -1,0 +1,47 @@
+<!-- HERO -->
+<section class="hero container">
+  <div class="hero-left">
+    <p class="hero-subtitle mono muted small">Développeur Full-Stack · Antananarivo</p>
+    <h1 class="hero-title">Thony<br>Rasolofondraibe</h1>
+    <p class="hero-desc">Je construis des backends, des API de paiement et des outils d'IA. Je cherche un stage de 3 à 4 mois.</p>
+    <div class="hero-actions">
+      <a href="#projets" class="btn btn-solid">Voir mes projets</a>
+      <a href="#contact" class="btn btn-outline">Me contacter</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="profile-card mono">
+      <span class="muted">// profil</span><br>
+      <span class="accent">rôle</span><span class="secondary">: Full-Stack JS</span><br>
+      <span class="accent">études</span><span class="secondary">: Master II</span><br>
+      <span class="accent">école</span><span class="secondary">: IT University</span><br>
+      <span class="accent">langues</span><span class="secondary">: FR, EN, MG</span><br>
+      <span class="accent">cherche</span><span class="secondary">: stage 3–4 mois</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETS -->
+<section id="projets" class="container section">
+  <p class="section-label mono accent">01 / projets</p>
+  @for (project of projects; track project.slug) {
+    <app-project-row [project]="project" />
+  }
+</section>
+
+<!-- COMPÉTENCES -->
+<section id="competences" class="container section">
+  <p class="section-label mono accent">02 / compétences</p>
+  <div class="tags">
+    @for (skill of skills; track skill) {
+      <app-tag [label]="skill" />
+    }
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="container section">
+  <p class="section-label mono accent">03 / contact</p>
+  <a href="mailto:thony.ndraibe@gmail.com" class="email-link">thony.ndraibe&#64;gmail.com</a>
+  <p class="mono muted contact-info">+261 34 94 398 00 · Antananarivo</p>
+</section>
