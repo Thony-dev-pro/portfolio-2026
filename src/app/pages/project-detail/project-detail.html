@@ -20,12 +20,17 @@
       <div>
         <p class="info-heading mono muted">Liens</p>
         @if (project()!.githubUrl) {
-          <a [href]="project()!.githubUrl" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Voir le code sur GitHub</a>
+          <a [href]="project()!.githubUrl" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Code source (GitHub)</a>
         } @else {
           <p class="mono muted">Code source privé</p>
         }
         @if (project()!.demoUrl) {
           <a [href]="project()!.demoUrl" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:12px">Démo</a>
+        }
+        @if (project()!.extraLinks?.length) {
+          @for (link of project()!.extraLinks; track $index) {
+            <a [href]="link.url" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:12px">{{ link.label }}</a>
+          }
         }
       </div>
     </div>
