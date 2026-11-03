@@ -13,8 +13,10 @@ export const PROJECTS: Project[] = [
       "Intégration d'un LLM local (Ollama – Mistral) avec traçabilité des sources : affichage des extraits et métadonnées utilisés pour chaque réponse.",
     ],
     tech: ['LangChain', 'ChromaDB', 'HuggingFaceEmbeddings', 'Ollama', 'Mistral', 'Streamlit', 'Python'],
-    githubUrl: undefined,
-    images: [],
+    githubUrl: 'https://github.com/Thony-dev-pro/notebooklm-clone.git',
+    images: [
+      { src: '/assets/projects/rag-local/rag_system_picture.png', alt: 'Système RAG local' },
+    ],
   },
   {
     slug: 'paiement-mobile-money',
