@@ -290,6 +290,57 @@ app-project-row { display: block; }
 
 .contact-info { font-size: 14px; margin-top: 8px; }
 
+// ─── Experience ───────────────────────────────────────────────────────────────
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.experience-item {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 32px;
+
+  &:last-of-type { border-bottom: none; }
+}
+
+.experience-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+
+.experience-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.experience-company {
+  font-size: 14px;
+}
+
+.experience-year {
+  font-size: 13px;
+}
+
+.experience-desc {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--secondary);
+  line-height: 1.7;
+
+  li { margin-bottom: 8px; }
+}
+
+.experience-tech {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
 // ─── Project detail ───────────────────────────────────────────────────────────
 .detail {
   padding-top: 48px;
