@@ -15,7 +15,7 @@ export const PROJECTS: Project[] = [
     tech: ['LangChain', 'ChromaDB', 'HuggingFaceEmbeddings', 'Ollama', 'Mistral', 'Streamlit', 'Python'],
     githubUrl: 'https://github.com/Thony-dev-pro/notebooklm-clone.git',
     images: [
-      { src: '/assets/projects/rag-local/rag_system_picture.png', alt: 'Système RAG local' },
+      { src: 'rag-local/rag_system_picture.png', alt: 'Système RAG local' },
     ],
   },
   {
@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
     tech: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Jupyter'],
     githubUrl: 'https://github.com/Thony-dev-pro/used_cars_prediction.git',
     images: [
-      { src: '/used-car-prediction/used_car_prediction_picture.png', alt: 'Prédiction de prix de voitures' },
+      { src: 'used-car-prediction/used_car_prediction_picture.png', alt: 'Prédiction de prix de voitures' },
     ],
   },
   {
@@ -53,12 +53,12 @@ export const PROJECTS: Project[] = [
       { label: 'Frontend Boutique', url: 'https://github.com/ManoaNyavo04/m1p13mean-Thony-Manoa_front_admin_boutique.git' },
     ],
     images: [
-      { src: '/plateforme-centre-commercial/commerce_1.png', alt: 'Plateforme Centre Commercial - Vue d\'ensemble' },
-      { src: '/plateforme-centre-commercial/commerce_2.png', alt: 'Plateforme Centre Commercial - Espace boutique' },
-      { src: '/plateforme-centre-commercial/commerce_3.png', alt: 'Plateforme Centre Commercial - Tableau de bord' },
-      { src: '/plateforme-centre-commercial/commerce_4.png', alt: 'Plateforme Centre Commercial - Gestion produits' },
-      { src: '/plateforme-centre-commercial/commerce_5.png', alt: 'Plateforme Centre Commercial - Commandes' },
-      { src: '/plateforme-centre-commercial/commerce_6.png', alt: 'Plateforme Centre Commercial - Espace administrateur' },
+      { src: 'plateforme-centre-commercial/commerce_1.png', alt: 'Plateforme Centre Commercial - Vue d\'ensemble' },
+      { src: 'plateforme-centre-commercial/commerce_2.png', alt: 'Plateforme Centre Commercial - Espace boutique' },
+      { src: 'plateforme-centre-commercial/commerce_3.png', alt: 'Plateforme Centre Commercial - Tableau de bord' },
+      { src: 'plateforme-centre-commercial/commerce_4.png', alt: 'Plateforme Centre Commercial - Gestion produits' },
+      { src: 'plateforme-centre-commercial/commerce_5.png', alt: 'Plateforme Centre Commercial - Commandes' },
+      { src: 'plateforme-centre-commercial/commerce_6.png', alt: 'Plateforme Centre Commercial - Espace administrateur' },
     ],
   },
 ];
