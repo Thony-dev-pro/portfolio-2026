@@ -13,7 +13,7 @@ import { PROJECTS } from '../../data/projects';
 })
 export class HomeComponent implements OnInit {
   projects = PROJECTS;
-  skills = ['JavaScript Full-Stack', 'Python', 'PrestaShop / WordPress', 'Paiement en ligne', 'IA / RAG'];
+  skills = ['Node.js', 'Python', 'RAG', 'PostgreSQL', 'MySQL', 'MongoDB', 'Angular', 'Express.js', 'Jupyter'];
 
   private title = inject(Title);
   private meta = inject(Meta);
