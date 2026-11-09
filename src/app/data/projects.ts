@@ -46,7 +46,7 @@ export const PROJECTS: Project[] = [
       "Chaque boutique gère ses produits (avec images), suit ses commandes (payées, à valider, annulées) et contrôle ses stocks, grâce à l'historique des mouvements, au réapprovisionnement et à des graphiques comparant les ajouts et les ventes. Un tableau de bord affiche son chiffre d'affaires, ses commandes et ses ventes par produit sur la période choisie.",
       "L'administrateur valide les comptes des boutiques, gère les catégories et la liste des acheteurs. Son tableau de bord affiche les ventes et le chiffre d'affaires de chaque boutique. L'acheteur consulte les produits, remplit son panier, renseigne son adresse de livraison et paie sa commande après s'être connecté ou inscrit.",
     ],
-    tech: ['MongoDB', 'Node.js', 'Express', 'React', 'JavaScript'],
+    tech: ['MongoDB', 'Node.js', 'Express', 'Angular', 'JavaScript'],
     githubUrl: 'https://github.com/Thony-dev-pro/m1p13mean-Thony-Manoa-back.git',
     extraLinks: [
       { label: 'Frontend Acheteurs', url: 'https://github.com/ManoaNyavo04/m1p13mean-Thony-Manoa_front_acheteur.git' },
